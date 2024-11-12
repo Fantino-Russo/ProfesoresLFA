@@ -27,7 +27,7 @@ export function DrawerPersonalizado(props) {
         icon={() => <Ionicons name="home" size={20} color="#2C4B9A" />}
       />
       <DrawerItem
-        label="Unirte a un aula"
+        label="Crear un aula"
         onPress={() => props.setModalVisible(true)} // Se abre el modal en lugar de navegar
         icon={() => <Ionicons name="add-circle-sharp" size={20} color="#2C4B9A" />}
       />

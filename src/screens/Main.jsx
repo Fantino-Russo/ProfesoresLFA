@@ -30,7 +30,7 @@ export default function Main() {
   const [modalVisible, setModalVisible] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Observador de cambios en el estado de autenticación
+  // Observador de cambios en el estado de autenticacion
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       console.log(user)
@@ -43,14 +43,14 @@ export default function Main() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {!isAuthenticated ? (
-          // Si no está autenticado, muestra las pantallas de Login y Registro
+          // si no esta autenticado borra el direcciona a al pantalla principal sin sesion (la del login y registro)
           <>
             <Stack.Screen name="SeleccionarAccion" component={SeleccionarAccionScreen} />
             <Stack.Screen name="Login" component={LoginScreen} />
             <Stack.Screen name="Registro" component={RegistroScreen} />
           </>
         ) : (
-          // Si está autenticado, muestra el Drawer principal
+          // al estar autenticado, muestra la pagina principal
           <Stack.Screen name="AppDrawer">
             {() => (
               <Drawer.Navigator
