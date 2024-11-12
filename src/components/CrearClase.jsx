@@ -1,13 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Modal, TouchableOpacity, TextInput, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import {saveUserData} from '@/src/components/TestDatosUsuario'
-export default function UnirseFormulario({ modalVisible, setModalVisible }) {
-    const guardarDatos = async () => {
-        const data = {dni: "47.050.429"}
-        await saveUserData(data);
-    }
-    
+export default function CrearClaseFormulario({ modalVisible, setModalVisible }) {
   return (
     <Modal
       animationType="slide"
@@ -20,11 +14,13 @@ export default function UnirseFormulario({ modalVisible, setModalVisible }) {
            
             <View style={styles.formContainer}>
             <TouchableOpacity style={styles.cerrar}  onPress={() => setModalVisible(false)}><Ionicons name="close" size={30} color="#2C4B9A" /></TouchableOpacity> 
-                <Text style={styles.Title}>Unirse a una clase</Text>
-                <Text style={styles.default}>Ingrese el código proporcionado por su profesor:</Text>
+                <Text style={styles.Title}>Crear clase</Text>
+                <Text style={styles.default}>Ingrese datos para crear su clase:</Text>
                 <TextInput placeholder="Codigo" style={styles.input} />
-                <TouchableOpacity style={styles.boton} onPress={guardarDatos}>
-                    <Text style={styles.botonText}>Unirse</Text>
+                <TextInput placeholder="Descripcion de la materia" style={styles.input} />
+                <TextInput placeholder="Curso" style={styles.input} />
+                <TouchableOpacity style={styles.boton} onPress={() => setModalVisible(false)}>
+                    <Text style={styles.botonText}>Crear</Text>
                 </TouchableOpacity>    
             </View>
         </View>
