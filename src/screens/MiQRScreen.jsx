@@ -1,10 +1,10 @@
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-
+import QRScanner from "@/src/components/QrScanner"
 export default function MiQRScreen(){
     return(
-        <TouchableOpacity style={styles.boton}>
-            <Text style={styles.botonText}>Generar QR</Text>
-        </TouchableOpacity>
+        
+        <QRScanner></QRScanner>
+        
     );
 }
 
